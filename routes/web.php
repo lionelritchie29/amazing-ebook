@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\EbookController;
 use App\Http\Controllers\GeneralController;
 use Illuminate\Support\Facades\Route;
 
@@ -27,3 +28,4 @@ Route::prefix('/auth')->group(function(){
 });
 
 Route::get('/home', [GeneralController::class, 'home'])->name('home');
+Route::get('/ebooks/{id}', [EbookController::class, 'show']);
