@@ -2,13 +2,13 @@
 
 @section('title', 'Ebook Detail')
 
-@section('header', 'Ebook Detail')
+@section('header', __('content.ebook_detail'))
 
 @section('content')
     <div class="space-y-4">
         <div class="flex">
           <div class="w-24">
-            Title:
+            {{ __('content.title') }}:
           </div>
           <div>
             {{$ebook->title}}
@@ -17,7 +17,7 @@
 
       <div class="flex">
           <div class="w-24">
-            Author:
+            {{__('content.author')}}:
           </div>
           <div>
             {{$ebook->author}}
@@ -26,7 +26,7 @@
 
       <div class="flex">
           <div class="w-24 mr-3">
-            Description:
+            {{__('content.description')}}:
           </div>
 
           <div>
@@ -39,7 +39,7 @@
       @csrf
       <input type="hidden" name="ebook_id" value="{{$ebook->ebook_id}}">
       <button class="w-full justify-center inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-        Rent
+        {{__('content.rent')}}
       </button>
     </form>
 @endsection

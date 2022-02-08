@@ -52,6 +52,6 @@ class OrderController extends Controller
 
         Order::where('account_id', $account_id)->delete();
 
-        return redirect('/after_action?message=Success!&redirect=true');
+        return redirect('/after_action?message='. __('content.success') .'!&redirect=true');
     }
 }

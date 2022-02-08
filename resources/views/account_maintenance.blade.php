@@ -2,12 +2,12 @@
 
 @section('title', 'Account Maintenance')
 
-@section('header', 'Account Maintenance')
+@section('header', __('content.account_maintenance'))
 
 @section('content')
   {{-- cuma ada admin yg lg login skrg --}}
   @if (count($accounts) == 1) 
-    <h1>Ups, there is no accounts</h1>
+    <h1>{{__('content.no_account')}}</h1>
   @else
     <div class="flex flex-col">
       <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -17,10 +17,10 @@
                       <thead class="bg-blue-500">
                       <tr>
                           <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
-                              Account
+                            {{__('content.account')}}
                           </th>
                           <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
-                              Action
+                            {{__('content.action')}}
                           </th>
                       </tr>
                       </thead>
@@ -33,14 +33,14 @@
                                   </td>
                                   <td class="space-x-3 flex px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                     <a href={{'/update_role/' . $account->account_id}} class="cursor inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-                                      Update Role
+                                      {{__('content.update_role')}}
                                     </a>
 
                                     <form action="{{ '/account/' . $account->account_id }}" method="POST">
                                       @csrf
                                       @method('delete')
                                       <button type="submit" class="cursor inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
-                                        Delete
+                                        {{__('content.delete')}}
                                       </button>
                                     </form>
                                 </td>

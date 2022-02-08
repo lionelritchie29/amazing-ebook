@@ -2,7 +2,7 @@
 
 @section('title', 'Home')
 
-@section('header', 'Home')
+@section('header', __('content.home'))
 
 @section('content')
     <div class="flex flex-col">
@@ -13,10 +13,10 @@
                         <thead class="bg-blue-500">
                         <tr>
                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
-                                Author
+                                {{__('content.author')}}
                             </th>
                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
-                                Title
+                                {{__('content.title')}}
                             </th>
                         </tr>
                         </thead>

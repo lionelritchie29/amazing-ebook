@@ -18,19 +18,19 @@
   
             @if(Session::get('user'))
               <div class="text-white text-right font-semibold">
-                <span class="block">Welcome, {{ Session::get('user')->first_name }}</span>
+                <span class="block">{{__('content.welcome')}}, {{ Session::get('user')->first_name }}</span>
                 <a href="/auth/logout" class="cursor inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                  Logout
+                  {{__('content.logout')}}
                 </a>
               </div>
             @else
               <div>
                 <a href="/auth/register" class="cursor inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                  Sign Up
+                  {{__('content.sign_up')}}
                 </a>
     
                 <a href="/auth/login" class="cursor inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                  Login
+                  {{__('content.login')}}
                 </a>
               </div>
             @endif
@@ -43,12 +43,12 @@
                 <div class="flex justify-between h-16">
                     <div class="flex">
                         <div class="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
-                            <a href="/home" class="{{Route::currentRouteName() == 'home'  ? 'border-indigo-500 border-b-2' : '' }} hover:text-blue-500 text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium" aria-current="page">Home</a>
-                            <a href="/orders" class="{{Route::currentRouteName() == 'orders'  ? 'border-indigo-500 border-b-2' : '' }} hover:text-blue-500 border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium" aria-current="page">Cart</a>
-                            <a href="/profile" class="{{Route::currentRouteName() == 'profile'  ? 'border-indigo-500 border-b-2' : '' }} hover:text-blue-500 border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium" aria-current="page">Profile</a>
+                            <a href="/home" class="{{Route::currentRouteName() == 'home'  ? 'border-indigo-500 border-b-2' : '' }} hover:text-blue-500 text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium" aria-current="page">{{__('content.home')}}</a>
+                            <a href="/orders" class="{{Route::currentRouteName() == 'orders'  ? 'border-indigo-500 border-b-2' : '' }} hover:text-blue-500 border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium" aria-current="page">{{__('content.cart')}}</a>
+                            <a href="/profile" class="{{Route::currentRouteName() == 'profile'  ? 'border-indigo-500 border-b-2' : '' }} hover:text-blue-500 border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium" aria-current="page">{{__('content.profile')}}</a>
                             
                             @if(Session::get('user')->role_id == 1)
-                              <a href="/account_maintenance" class="{{Route::currentRouteName() == 'accountMaintenance'  ? 'border-indigo-500 border-b-2' : '' }} hover:text-blue-500 border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium" aria-current="page">Account Maintenance</a>
+                              <a href="/account_maintenance" class="{{Route::currentRouteName() == 'accountMaintenance'  ? 'border-indigo-500 border-b-2' : '' }} hover:text-blue-500 border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium" aria-current="page">{{__('content.account_maintenance')}}</a>
                             @endif
                           </div>
                     </div>

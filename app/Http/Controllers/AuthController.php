@@ -81,6 +81,6 @@ class AuthController extends Controller
         Session::remove('user');
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect('/after_action?message=Log Out Success!');
+        return redirect('/after_action?message=' . __('content.logout_success'));
     }
 }
