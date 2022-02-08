@@ -14,4 +14,8 @@ class Account extends Model
     public $incrementing = false;
 
     protected $fillable = ['account_id', 'role_id', 'gender_id', 'first_name', 'last_name', 'middle_name', 'email', 'password', 'display_picture_link', 'modified_at', 'modified_by'];
+
+    public function role() {
+        return $this->hasOne(Role::class, 'role_id', 'role_id');
+    }
 }

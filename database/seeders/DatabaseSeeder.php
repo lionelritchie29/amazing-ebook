@@ -110,5 +110,33 @@ class DatabaseSeeder extends Seeder
             'modified_at' => null, 
             'modified_by' => null
         ]);
+
+        Account::create([
+            'account_id' => uniqid(), 
+            'role_id' => 2, 
+            'gender_id' => 2, 
+            'first_name' => 'Irisviel', 
+            'last_name' => 'Eizenberg', 
+            'middle_name' => null, 
+            'email' => 'irisviel@yahoo.com', 
+            'password' => 'irisviel123',
+            'display_picture_link' => '/images/default.jpg', 
+            'modified_at' => null, 
+            'modified_by' => null
+        ]);
+
+        Account::create([
+            'account_id' => uniqid(), 
+            'role_id' => 2, 
+            'gender_id' => 2, 
+            'first_name' => 'Artoria', 
+            'last_name' => 'Pendragon', 
+            'middle_name' => null, 
+            'email' => 'artoria@yahoo.com', 
+            'password' => 'artoria123',
+            'display_picture_link' => '/images/default.jpg', 
+            'modified_at' => null, 
+            'modified_by' => null
+        ]);
     }
 }

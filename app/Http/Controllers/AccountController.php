@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Account;
 use App\Models\Gender;
 use App\Models\Role;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 
 class AccountController extends Controller
@@ -53,5 +54,26 @@ class AccountController extends Controller
         $user->save();
 
         return redirect()->back()->with('success', 'Update profile success');
+    }
+
+    public function editRole($id) {
+        $account = Account::find($id);
+        $roles = Role::all();
+        return view('update_role', ['account' => $account, 'roles' => $roles]);
+    }
+
+    public function updateRole(Request $request, $id) {
+        $account = Account::find($id);
+        $account->role_id = $request->role;
+        $account->save();
+
+        return redirect()->back()->with('success', 'Role updated succesfully');
+    }
+
+    public function delete($id) {
+        $account = Account::find($id);
+        $account->delete();
+
+        return redirect()->back()->with('success', 'Account deleted succesfully');
     }
 }
