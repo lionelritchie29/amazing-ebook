@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\EbookController;
 use App\Http\Controllers\GeneralController;
+use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,3 +30,9 @@ Route::prefix('/auth')->group(function(){
 
 Route::get('/home', [GeneralController::class, 'home'])->name('home');
 Route::get('/ebooks/{id}', [EbookController::class, 'show']);
+
+Route::prefix('/orders')->group(function() {
+    Route::post('/', [OrderController::class, 'add'])->name('addOrder');
+    Route::get('/', [OrderController::class, 'get'])->name('orders');
+    Route::delete('/', [OrderController::class, 'delete'])->name('deleteOrder');
+});

@@ -35,9 +35,11 @@
       </div>
     </div>
 
-    <div class="text-center mt-8">
-      <a href="/home" type="button" class="w-full justify-center inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+    <form action="{{ route('addOrder') }}" method="POST" class="text-center mt-8">
+      @csrf
+      <input type="hidden" name="ebook_id" value="{{$ebook->ebook_id}}">
+      <button class="w-full justify-center inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
         Rent
-      </a>
-    </div>
+      </button>
+    </form>
 @endsection

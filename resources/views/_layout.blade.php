@@ -44,7 +44,7 @@
                     <div class="flex">
                         <div class="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
                             <a href="/home" class="{{Route::currentRouteName() == 'home'  ? 'border-indigo-500 border-b-2' : '' }} hover:text-blue-500 text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium" aria-current="page">Home</a>
-                            <a href="/contact" class="{{Route::currentRouteName() == 'contact'  ? 'border-indigo-500 border-b-2' : '' }} hover:text-blue-500 border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium" aria-current="page">Cart</a>
+                            <a href="/orders" class="{{Route::currentRouteName() == 'orders'  ? 'border-indigo-500 border-b-2' : '' }} hover:text-blue-500 border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium" aria-current="page">Cart</a>
                             <a href="/contact" class="{{Route::currentRouteName() == 'contact'  ? 'border-indigo-500 border-b-2' : '' }} hover:text-blue-500 border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium" aria-current="page">Profile</a>
                             
                             @if(Session::get('user')->role_id == 1)

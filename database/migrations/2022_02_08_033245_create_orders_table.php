@@ -15,7 +15,7 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id('order_id');
-            $table->string('account_id');
+            $table->string('account_id', 15);
             $table->unsignedBigInteger('ebook_id');
             $table->date('order_date');
 

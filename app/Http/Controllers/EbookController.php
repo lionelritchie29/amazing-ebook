@@ -9,6 +9,6 @@ class EbookController extends Controller
 {
     public function show($id) {
         $ebook = Ebook::find($id);
-        return view('ebooks.show', ['ebook' => $ebook]);
+        return view('ebooks.detail', ['ebook' => $ebook]);
     }
 }
