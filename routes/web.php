@@ -35,4 +35,5 @@ Route::prefix('/orders')->group(function() {
     Route::post('/', [OrderController::class, 'add'])->name('addOrder');
     Route::get('/', [OrderController::class, 'get'])->name('orders');
     Route::delete('/', [OrderController::class, 'delete'])->name('deleteOrder');
+    Route::post('/submit', [OrderController::class, 'submit'])->name('submitOrder');
 });

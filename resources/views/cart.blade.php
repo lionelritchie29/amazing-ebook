@@ -49,6 +49,13 @@
               </div>
           </div>
       </div>
+
+      <form action="/orders/submit" method="POST" class="mt-4">
+        @csrf
+        <button type="submit" class="w-full justify-center inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+          Submit
+        </button>
+      </form>
   </div>
   @endif
 @endsection

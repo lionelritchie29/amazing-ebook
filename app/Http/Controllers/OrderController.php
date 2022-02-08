@@ -46,4 +46,12 @@ class OrderController extends Controller
 
         return redirect()->back()->with('success', 'Order deleted succesfully');
     }
+
+    public function submit(Request $request) {
+        $account_id = $request->session()->get('user')->account_id;
+
+        Order::where('account_id', $account_id)->delete();
+
+        return redirect()->route('home')->with('success', 'Success rent!');
+    }
 }
