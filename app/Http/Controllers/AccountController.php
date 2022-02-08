@@ -17,6 +17,11 @@ class AccountController extends Controller
         return view('profile', ['user' => $user, 'genders' => $genders, 'roles' => $roles]);
     }
 
+    public function get() {
+        $accounts = Account::all();
+        return view('account_maintenance', ['accounts' => $accounts]);
+    }
+
     public function update(Request $request) {
         $request->validate([
             'first_name' => 'required|string|max:25|alpha',

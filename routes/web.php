@@ -43,3 +43,5 @@ Route::prefix('/profile')->group(function() {
     Route::get('/', [AccountController::class, 'index'])->name('profile');
     Route::put('/', [AccountController::class, 'update'])->name('updateProfile');
 });
+
+Route::get('/account_maintenance', [AccountController::class, 'get'])->name('accountMaintenance');

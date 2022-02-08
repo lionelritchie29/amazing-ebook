@@ -48,7 +48,7 @@
                             <a href="/profile" class="{{Route::currentRouteName() == 'profile'  ? 'border-indigo-500 border-b-2' : '' }} hover:text-blue-500 border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium" aria-current="page">Profile</a>
                             
                             @if(Session::get('user')->role_id == 1)
-                              <a href="/contact" class="{{Route::currentRouteName() == 'contact'  ? 'border-indigo-500 border-b-2' : '' }} hover:text-blue-500 border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium" aria-current="page">Account Maintenance</a>
+                              <a href="/account_maintenance" class="{{Route::currentRouteName() == 'accountMaintenance'  ? 'border-indigo-500 border-b-2' : '' }} hover:text-blue-500 border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium" aria-current="page">Account Maintenance</a>
                             @endif
                           </div>
                     </div>
