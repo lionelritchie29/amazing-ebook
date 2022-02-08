@@ -18,7 +18,7 @@ class CreateAccountsTable extends Migration
             $table->unsignedBigInteger('role_id');
             $table->unsignedBigInteger('gender_id');
             $table->string('first_name', 25);
-            $table->string('middle_name', 25);
+            $table->string('middle_name', 25)->nullable();
             $table->string('last_name', 25);
             $table->string('email', 50);
             $table->string('password', 50);
