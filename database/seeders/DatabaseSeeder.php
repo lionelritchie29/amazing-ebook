@@ -91,8 +91,8 @@ class DatabaseSeeder extends Seeder
             'last_name' => 'Ritchie', 
             'middle_name' => null, 
             'email' => 'lionel.ritchie@yahoo.com', 
-            'password' => hash('md5', 'lionel123'), 
-            'display_picture_link' => 'default.jpg', 
+            'password' => 'lionel123', 
+            'display_picture_link' => '/images/default.jpg', 
             'modified_at' => null, 
             'modified_by' => null
         ]);
@@ -105,8 +105,8 @@ class DatabaseSeeder extends Seeder
             'last_name' => 'Eisenberg', 
             'middle_name' => null, 
             'email' => 'marin@yahoo.com', 
-            'password' => hash('md5', 'marin123'),
-            'display_picture_link' => 'default.jpg', 
+            'password' => 'marin123',
+            'display_picture_link' => '/images/default.jpg', 
             'modified_at' => null, 
             'modified_by' => null
         ]);

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AccountController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\EbookController;
 use App\Http\Controllers\GeneralController;
@@ -36,4 +37,9 @@ Route::prefix('/orders')->group(function() {
     Route::get('/', [OrderController::class, 'get'])->name('orders');
     Route::delete('/', [OrderController::class, 'delete'])->name('deleteOrder');
     Route::post('/submit', [OrderController::class, 'submit'])->name('submitOrder');
+});
+
+Route::prefix('/profile')->group(function() {
+    Route::get('/', [AccountController::class, 'index'])->name('profile');
+    Route::put('/', [AccountController::class, 'update'])->name('updateProfile');
 });

@@ -31,7 +31,7 @@ class AuthController extends Controller
         if ($user == null)
             return redirect()->back()->with('error', 'Email does not exist!');
 
-        if (md5($request->password) != $user->password) {
+        if ($request->password != $user->password) {
             return redirect()->back()->with('error', 'Wrong password!');
         } else {
             Session::put('user', $user);
@@ -68,7 +68,7 @@ class AuthController extends Controller
             'last_name' => $request->last_name, 
             'middle_name' => $request->middle_name, 
             'email' => $request->email, 
-            'password' => hash('md5', $request->password),
+            'password' => $request->password,
             'display_picture_link' => $path, 
             'modified_at' => null, 
             'modified_by' => null
