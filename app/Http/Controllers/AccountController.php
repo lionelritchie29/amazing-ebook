@@ -67,7 +67,7 @@ class AccountController extends Controller
         $account->role_id = $request->role;
         $account->save();
 
-        return redirect()->back()->with('success', 'Role updated succesfully');
+        return redirect('/after_action?message=Saved!&redirect=true');
     }
 
     public function delete($id) {

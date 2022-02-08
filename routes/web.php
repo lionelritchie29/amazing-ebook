@@ -48,3 +48,5 @@ Route::get('/account_maintenance', [AccountController::class, 'get'])->name('acc
 Route::get('/update_role/{id}', [AccountController::class, 'editRole'])->name('editRole')->middleware('session_auth_admin');
 Route::post('/update_role/{id}', [AccountController::class, 'updateRole'])->name('updateRole')->middleware('session_auth_admin');
 Route::delete('/account/{id}', [AccountController::class, 'delete'])->name('deleteAccount')->middleware('session_auth_admin');
+
+Route::get('/after_action', [GeneralController::class, 'afterAction'])->name('afterAction');

@@ -52,6 +52,6 @@ class OrderController extends Controller
 
         Order::where('account_id', $account_id)->delete();
 
-        return redirect()->route('home')->with('success', 'Success rent!');
+        return redirect('/after_action?message=Success!&redirect=true');
     }
 }
