@@ -35,7 +35,7 @@ class AuthController extends Controller
             return redirect()->back()->with('error', 'Wrong password!');
         } else {
             Session::put('user', $user);
-            return redirect()->back()->with('success', 'Login success!');
+            return redirect()->route('home')->with('success', 'Login success!');
         }
     }
 

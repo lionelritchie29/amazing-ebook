@@ -1,8 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\PageController;
-use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\GeneralController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [PageController::class, 'index'])->name('index');
+Route::get('/', [GeneralController::class, 'index'])->name('index');
 
 
 Route::prefix('/auth')->group(function(){
@@ -26,3 +25,5 @@ Route::prefix('/auth')->group(function(){
     Route::post('/register', [AuthController::class, 'register'])->name('register');
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 });
+
+Route::get('/home', [GeneralController::class, 'home'])->name('home');
